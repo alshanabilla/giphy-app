@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-export default function SearchBar() {
+const SearchBar = (props) => {
+  const { getGifs, handleInput } = props;
   return (
-    <form className="form-search">
-      <input type="text" placeholder="Search..." className="form-search__input" required />
+    <form className="form-search" onSubmit={getGifs}>
+      <input type="text" className="form-search__input" required onChange={handleInput}/>
       <button type="submit" className="form-search__button">Search</button>
     </form>
   )
 }
+
+export default SearchBar;

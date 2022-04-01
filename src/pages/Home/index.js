@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Gif from '../../components/Gif'
-// import SearchBar from '../../components/SearchBar'
+import SearchBar from '../../components/SearchBar';
 // import gifs from '../../data/gifs'
 // import config from '../../lib/config'
 
@@ -31,12 +31,15 @@ const Home = () => {
 
     return (
         <div>
-            <form className="form-search" onSubmit={getGifs}>
+            {/* <form className="form-search" onSubmit={getGifs}>
                 <input type="text" className="form-search__input" required onChange={handleInput}/>
                 <button type="submit" className="form-search__button">Search</button>
-            </form>
+            </form> */}
+        <SearchBar 
+            getGifs={getGifs}
+            handleInput={handleInput}
+        />
 
-            
         <div className="gifs">
             {gifs.map((g) => (
                 <Gif
