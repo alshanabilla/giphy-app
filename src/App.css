@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.gifs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.gif {
+  width: 200px;
+}
+
+.gif .image {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px;
+}
