@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Gif from '../../components/Gif'
 import SearchBar from '../../components/SearchBar';
 // import gifs from '../../data/gifs'
@@ -6,38 +6,36 @@ import SearchBar from '../../components/SearchBar';
 
 const Home = () => {
     const [ gifs, setGifs ] = useState([]);
-    const [ text, setText ] = useState("");
+    // const [ text, setText ] = useState("");
 
-    useEffect(() => {
-        getGif()
-    }, []);
+    // useEffect(() => {
+    //     getGif()
+    // }, []);
 
-    const handleInput = (e) => {
-        setText(e.target.value);
-    }
+    // const handleInput = (e) => {
+    //     setText(e.target.value);
+    // }
 
-    const getGifs = (e) => {
-        e.preventDefault();
-        getGif();
-    };
+    // const getGifs = (e) => {
+    //     e.preventDefault();
+    //     getGif();
+    // };
 
-    const getGif = async () => {
-        const gifs = await fetch(
-            `http://api.giphy.com/v1/gifs/search?q=${text}&api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=12`
-          ).then((response) => response.json());
+    // const getGif = async () => {
+    //     const gifs = await fetch(
+    //         `http://api.giphy.com/v1/gifs/search?q=${text}&api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=12`
+    //       ).then((response) => response.json());
       
-          setGifs(gifs.data);
-    }
+    //       setGifs(gifs.data);
+    // }
+    const handleSuccessSearch = (searchGifts) => {
+        setGifs(searchGifts);
+      }
 
     return (
         <div>
-            {/* <form className="form-search" onSubmit={getGifs}>
-                <input type="text" className="form-search__input" required onChange={handleInput}/>
-                <button type="submit" className="form-search__button">Search</button>
-            </form> */}
         <SearchBar 
-            getGifs={getGifs}
-            handleInput={handleInput}
+            onSuccess={handleSuccessSearch}
         />
 
         <div className="gifs">
