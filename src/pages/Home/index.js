@@ -4,7 +4,7 @@ import SearchBar from '../../components/SearchBar';
 // import gifs from '../../data/gifs'
 // import config from '../../lib/config'
 
-const Home = () => {
+const HomePage = () => {
     const [ gifs, setGifs ] = useState([]);
     // const [ text, setText ] = useState("");
 
@@ -52,4 +52,4 @@ const Home = () => {
         
 }
 
-export default Home;
+export default HomePage;

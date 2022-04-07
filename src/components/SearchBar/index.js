@@ -14,11 +14,8 @@ const SearchBar = ({ onSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const LIMIT = 12;
-    const GIPHY_KEY = process.env.REACT_APP_GIPHY_KEY;
-
     const gifs = await fetch(
-        `${config.GIPHY_BASE_URL}/gifs/search?q=${query}&api_key=${GIPHY_KEY}&limit=${LIMIT}`
+        `${config.GIPHY_BASE_URL}/gifs/search?q=${query}&api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=12`
       ).then((response) => response.json());
 
     onSuccess(gifs.data);

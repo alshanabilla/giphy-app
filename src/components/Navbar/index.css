@@ -1,0 +1,22 @@
+.navbar {
+    padding: 16px 0;
+    background-color: burlywood;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+  
+  .navbar_menu {
+    display: flex;
+    gap: 40px;
+    padding-left: 40px;
+  }
+  
+  .navbar_link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar_link:hover {
+    text-decoration: underline;
+  }
